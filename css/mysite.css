@@ -179,14 +179,12 @@ body{
     /* margin: 2%; */
     /* color: aliceblue; */
     width: 100%;
-    height: 1000px;
     background-color: #00171fe8;
 
 }
 .fixed_>div{
     
-    padding: 10px;
-    margin: 2%;
+    
     
     overflow-y: scroll;
 }
@@ -250,6 +248,10 @@ body{
 .head_inner{
     text-align: center;
 }
+.back{
+    padding: 10px;
+    border-bottom: solid 1px #f9eedb;
+}
 .menu_outer{
     padding: 0% 25%;
 }
@@ -280,18 +282,9 @@ body{
     padding: 0;
 }
 .mainDiv{
-    padding: 5%;
-    background-color: #fff;
+    padding: 0%;
 }
-.About{
-    color: rgb(4, 94, 148);
-    text-align: justify;
-    padding: 2% 10%;
-}
-.desc{
-    color: rgb(4, 94, 148);
-    text-align: justify;
-}
+
 .white_background{
     background-color: #fff;
 }
@@ -331,7 +324,7 @@ body{
     100% {clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);}
   }
 .padding_horizontal20{
-    padding: 0% 20%;
+    padding: 5% 20%;
 }
 .flex_home{
     display: flex;
@@ -343,6 +336,9 @@ body{
     text-align: right;
     font-size:2vw;
     color: #8e8e8e;
+}
+.align-right{
+    text-align: right;
 }
 .project_name{
     font-size:1vw;
