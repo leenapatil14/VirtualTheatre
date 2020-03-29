@@ -117,9 +117,9 @@
           mydata = json.Search;
           $scope.movies = json.Search;
         }
-      });
+      }); 
 
-   // console.log($scope.movies)
+    console.log($scope.movies)
 
 
     
@@ -212,14 +212,15 @@
     $scope.prevPage=$stateParams.prevState;
     console.log("inside screenCtrl");
     $scope.showDescription=true;
-    $scope.movies=[
-        {'title':'ABCD444','upcoming':'true','time':'today, 2:30 PM','duration':'3 hr 30 mins','frontImg':'images/pune/lonavala.jpeg','backImg':'images/pune/lonavala.jpeg','genre':'Comedy','language':'English','year':'2012'},
-        {'title':'ABCD444','upcoming':'true','time':'today, 2:30 PM','duration':'3 hr 30 mins','frontImg':'images/pune/lonavala.jpeg','backImg':'images/pune/lonavala.jpeg','genre':'Comedy','language':'English','year':'2012'},
-        {'title':'ABCD444','upcoming':'true','time':'today, 2:30 PM','duration':'3 hr 30 mins','frontImg':'images/pune/lonavala.jpeg','backImg':'images/pune/lonavala.jpeg','genre':'Comedy','language':'English','year':'2012'},
-        {'title':'ABCD444','upcoming':'true','time':'today, 2:30 PM','duration':'3 hr 30 mins','frontImg':'images/pune/lonavala.jpeg','backImg':'images/pune/lonavala.jpeg','genre':'Comedy','language':'English','year':'2012'},
-        {'title':'ABCD444','upcoming':'true','time':'today, 2:30 PM','duration':'3 hr 30 mins','frontImg':'images/pune/lonavala.jpeg','backImg':'images/pune/lonavala.jpeg','genre':'Comedy','language':'English','year':'2012'},
-        {'title':'ABCD444','upcoming':'true','time':'today, 2:30 PM','duration':'3 hr 30 mins','frontImg':'images/pune/lonavala.jpeg','backImg':'images/pune/lonavala.jpeg','genre':'Comedy','language':'English','year':'2012'}
-    ];
+    $.ajax({
+        url: 'http://www.omdbapi.com/?apikey=b9ac7a00&s=Batman',
+        async: false,
+        dataType: 'json',
+        success: function (json) {
+          mydata = json.Search;
+          $scope.movies = json.Search;
+        }
+      });
     $scope.open_screen=function(movie){
         $scope.showDescription=false;
         $scope.detailedDesc=movie;

@@ -40,6 +40,15 @@ body{
     font-weight: 900;
     padding: 10px !important;
 }
+.watch_now{
+    
+    text-align: center;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    background-color: rgb(0, 187, 161);
+    font-weight: 900;
+    padding: 10px !important;
+}
 .col-1 {
     width: 8.33%;
 }
@@ -421,6 +430,32 @@ div.gallery {
     text-align: center;
     font-size: 1.2vw;
     font-weight: 900;
+  }
+  .flex_horizontal{
+    height: auto;
+    overflow: hidden;
+    overflow-x: scroll;
+    display: flex;
+  }
+  .inline_mov{
+    display: inline-block;
+    margin: 5px;
+    text-align: center;
+  }
+  .movies_desc{
+    font-size: 1.5vw;
+    font-weight: 900;
+    word-break: break-word;
+  }
+  .my_account{
+    display: flex;
+    align-items: center;
+  }
+  .my_account .bold_text{
+      font-size: 3vw;
+  }
+  .my_movies > img{
+    width: 150px;
   }
 @media only screen and (max-width: 800px) {
     /* For mobile phones: */

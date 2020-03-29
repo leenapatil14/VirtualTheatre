@@ -37,7 +37,7 @@
     
     <div class="row filters_" ng-hide="closeFilters">
         <div class="col-12 nopadding">
-            <div class="align-center bold_text flex_container" ng-click="showLangFilter=!showLangFilter">
+            <div class="align-center bold_text flex_container cursor_pointer" ng-click="showLangFilter=!showLangFilter">
                 <div class="margin_">Filter by Language ></div>
             </div>
             <div class="flex_container" ng-show="showLangFilter">
@@ -46,7 +46,7 @@
                         ng-change="selectLang(lang.name)">{{lang.name}}</input>
                 </div>
             </div>
-            <div class="align-center bold_text flex_container" ng-click="showGenreFilter=!showGenreFilter">
+            <div class="align-center bold_text flex_container cursor_pointer" ng-click="showGenreFilter=!showGenreFilter">
             <div>Filter by Genre ></div>
         </div>
             <div class="flex_container" ng-show="showGenreFilter">
@@ -69,7 +69,7 @@
 
             <div class="gallery">
                 <img src="{{movie.Poster}}" width="600" height="400">
-                </a>
+                
                 <div class="desc">
                     {{movie.Title}} <br>
                     {{movie.Year}} <br>

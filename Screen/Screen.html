@@ -1,34 +1,48 @@
 <div class="mainDiv">
-<div class="relative_">
-    <div class="fixed_" ng-hide="showDescription" >
-        <div class="row">
-            <div class="col-12" ng-click="close_screen()">Close</div>
-            <div >
-                Vdeo
+    <div class="relative_">
+        <div class="fixed_" ng-hide="showDescription">
+            <div class="row">
+                <div class="col-12" ng-click="close_screen()">Close</div>
+                <div>
+                    Vdeo
+                </div>
+
             </div>
-            
         </div>
-    </div>
-    <div ng-if="bookedMovie!=null">
-        Sucess!
-    Enjoy streaming {{bookedMovie.title}} at {{bookedMovie.time}}
-    </div>
-    <div class="back_norm">
-    Your Watchlist:
-    </div>
-    <div class="flex_home  " >
-        <div class="home_movies cursor_pointer" ng-repeat="movie in movies " ng-click="open_screen(movie)">
-           
-            <img src="{{movie.Poster}}" width="600" height="400">
-                        {{movie.title}} <br>
-                        2:30pm 1st April <br>
-                        {{movie.duration}} 
+        <div ng-if="bookedMovie!=null">
+            Sucess!
+            Enjoy streaming {{bookedMovie.title}} at {{bookedMovie.time}}
+        </div>
+        <div class="back_norm align-center bold_text">
+            Your Screens
+        </div>
+        <div class="row  my_account" >
+            <div class="col-1 align-center bold_text">
+                <
+            </div>
+            <div class="col-10 flex_horizontal nopadding">
+                <div class=" inline_mov" ng-repeat="movie in movies " >
+
+                    <div class="my_movies disable_mov" >
+                        <img src="{{movie.Poster}}">
+
+                        <div class="movie_desc">
+                            {{movie.Title}} <br>
+                            {{movie.Year}} <br>
+                        </div>
+                             <div class="input_padding margin_ cursor_pointer watch_now margintop10per" ng-if="true" ng-click="gotoPage('screen',selectedMovie)">Enter Screen
                     
-               
-            
+                                </div>
+                            
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 align-center bold_text">
+                >
+            </div>
+
+
+
         </div>
-        
-        
     </div>
-</div>
 </div>
