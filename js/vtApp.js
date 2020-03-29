@@ -46,9 +46,18 @@
             prevState:null
         }
     })
+    .state("Login", {
+        url:"/Login",
+        templateUrl : "Login/Login.html",
+        controller: "loginCtrl",
+        params: {
+            args: null,
+            prevState:null
+        }
+    })
 
 })
-.controller('vtStarterCtrl', function ($scope, $state, $rootScope) {
+.controller('vtStarterCtrl', function ($scope, $state, $rootScope,$stateParams) {
 
     $rootScope.currenttab='homeTab';
     $state.go("home");
@@ -58,6 +67,16 @@
     $rootScope.goBack=function(pageName){
         $state.go(pageName);
     }
+
+})
+.controller('loginCtrl', function ($scope, $state, $rootScope,$stateParams) {
+
+    $rootScope.currenttab='login';
+    //$state.go("home");
+    $scope.prevPage=$stateParams.prevState;
+    $scope.selectedMovie=$stateParams.args;
+    $state.loginData={};
+    
 
 })
 .controller('homeCtrl', function ($scope, $state, $rootScope, $filter,$stateParams) {
@@ -188,6 +207,6 @@
     $rootScope.currenttab="movieBookCtrl";
     $scope.prevPage=$stateParams.prevState;
     $scope.selectedMovie=$stateParams.args;
-    $state.bookinData={};
+    $state.bookingData={};
 
 })

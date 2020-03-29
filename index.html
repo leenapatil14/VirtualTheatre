@@ -14,8 +14,14 @@
     </head>
     <body ng-app="vtStarter" ng-controller="vtStarterCtrl">
         <div><h1>We Talkies</h1><h3>Stream Together...</h3></div>
-        <div class="row" ng-hide="{currentTabClass: currenttab == 'homeTab'}"><div class="col-12">Back</div></div>
-        
+         <div class="row">
+            <div class="col-9"></div>
+            <div class="col-3">
+                <div ng-click="gotoPage('Login')">
+                    Login
+                </div>
+            </div>
+        </div>
         <ui-view></ui-view>
         <div><h5>copyright footer</h5></div>
     </body>
