@@ -1,57 +1,82 @@
-<div class="relative_">
-    <div class="fixed_" ng-hide="showDescription" >
+<div class="maniDiv">
+    <div class="relative_">
+
+        <div class="fixed_" ng-hide="showDescription">
             <div class="row">
-                    <div class="col-12" ng-click="close_description()">Close</div>
-                                </div>
-        <div class="row">
-                2:30pm <br>1st April <br>
+                <div class="col-12 cursor_pointer" ng-click="close_description()">X Close</div>
             </div>
             <div class="row">
-                <div class="button_" ng-click="gotoPage('MovieBook',detailedDesc,'home')">Book</div>
+                <div class="col-12 detailedTitle">{{detailedDesc.Title}}<div class="detailedYear">&nbsp;({{detailedDesc.Year}})</div></div>
+                
+                <div class="galleryDestailed">
+                    <img src="{{detailedDesc.Poster}}" width="600" height="400">
+                    </a>
+                    <div class="desc">
+                         
+                        2:30pm 1st April 
+                    </div>
+                </div>
             </div>
-            
+            <div class="row">
+                <div class="cursor_pointer login" ng-click="gotoPage('MovieBook',detailedDesc,'home')">Book</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-11 search_"><input type="text" ng-model="searchText" placeholder="Search a movie"></input></div>
+        <div class="col-1 filter_ cursor_pointer" ng-click="showFilters()">
+            <i class="material-icons">reorder</i>
+            <span ng-if="filters_applied>0">{{filters_applied}}</span>
         </div>
     </div>
     <div class="row">
-        <div class="col-10 search"><input type="search" ng-model="searchText" placeholder="Search a movie"></input></div>
-        <div class="col-2 filter cursor_pointer" ng-click="showFilters()">filter</div>
+        <div class="col-12 highlights">
+            Batman Marathon! This Week!!
+        </div>
     </div>
     <div class="row" ng-hide="closeFilters">
         <div class="col-12">
             <div>Filter by Language:</div>
             <div class="flex_container">
                 <div class="" ng-repeat="lang in languages">
-                    <input type="checkbox" name="lang" value="{{lang}}" ng-model="lang.isChecked" ng-change="selectLang(lang.name)" >{{lang.name}}</input>
+                    <input type="checkbox" name="lang" value="{{lang}}" ng-model="lang.isChecked"
+                        ng-change="selectLang(lang.name)">{{lang.name}}</input>
                 </div>
             </div>
             <div>Filter by Genre:</div>
             <div class="flex_container">
                 <div class="" ng-repeat="genre in genres">
-                    <input type="checkbox" name="genre" value="{{genre}}" ng-model="genre.isChecked" ng-change="selectGenre(genre.name)">{{genre.name}}</input></div>
+                    <input type="checkbox" name="genre" value="{{genre}}" ng-model="genre.isChecked"
+                        ng-change="selectGenre(genre.name)">{{genre.name}}</input></div>
             </div>
         </div>
-        
+
     </div>
-    
-    <div class="flex_home  " >
-        <div class="home_movies cursor_pointer" ng-repeat="movie in movies | filter:searchText | filter:checkedFilter |filter:checkedGenreFilter" ng-click="open_description(movie)">
-           
+
+    <div class="flex_home  ">
+        <div class="home_movies cursor_pointer"
+            ng-repeat="movie in movies | filter:searchText | filter:checkedFilter |filter:checkedGenreFilter"
+            ng-click="open_description(movie)">
+
             <div class="gallery">
-                  <img src="{{movie.Poster}}" width="600" height="400">
+                <img src="{{movie.Poster}}" width="600" height="400">
                 </a>
                 <div class="desc">
                     {{movie.Title}} <br>
-                        {{movie.Year}} <br>
+                    {{movie.Year}} <br>
                 </div>
-              </div>
-                       
-                    
-               
-            
+            </div>
+
+
+
+
         </div>
-        
-        
+
+
     </div>
-    
-    </div>
+
+</div>
+</div>
 </div>

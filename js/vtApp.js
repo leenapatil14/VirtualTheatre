@@ -10,15 +10,6 @@
             prevState:null
         }
     })
-    .state("register", {
-        url:"/register",
-        templateUrl : "Register/Register.html",
-        controller: "registerCtrl",
-        params: {
-            args: null,
-            prevState:null
-        }
-    })
     .state("screen", {
         url:"/screen",
         templateUrl : "Screen/Screen.html",
@@ -61,6 +52,8 @@
 
     $rootScope.currenttab='homeTab';
     $state.go("home");
+    $rootScope.isLoggedin=false;
+    
     $rootScope.gotoPage=function(pageName,args,prevState){
         $state.go(pageName,{args:args,prevState:prevState});
     }
@@ -75,7 +68,12 @@
     //$state.go("home");
     $scope.prevPage=$stateParams.prevState;
     $scope.selectedMovie=$stateParams.args;
+    $state.registrationData={};
+    $scope.isNew=false;
     $state.loginData={};
+    $scope.toggleRegister=function(){
+        $scope.isNew=!$scope.isNew;
+    }
     
 
 })
@@ -86,6 +84,9 @@
     console.log("inside home")
     $scope.showDescription=true;
     $scope.closeFilters=true;
+    $scope.selectedGenre=[];
+    $scope.selectedLang=[];
+    $scope.filters_applied=$scope.selectedLang.length+$scope.selectedGenre.length;
     
     $scope.movies;
     var data = [];
@@ -108,7 +109,7 @@
 
 
     
-    $scope.selectedLang=[];
+    
     $scope.languages=[{'name':'English','isChecked':'false'},
     {'name':'Hindi','isChecked':'false'},
     {'name':'Marathi','isChecked':'false'}
@@ -137,9 +138,10 @@
             $scope.selectedLang.splice($scope.selectedLang.indexOf(name),1);
         }
         //console.log($scope.selectedLang);
+        $scope.filters_applied=$scope.selectedLang.length+$scope.selectedGenre.length;
   
     }
-    $scope.selectedGenre=[];
+    
     $scope.selectGenre = function (name) {
         if($scope.selectedGenre.indexOf(name) == -1){
             $scope.selectedGenre.push(name);
@@ -148,12 +150,14 @@
             $scope.selectedGenre.splice($scope.selectedGenre.indexOf(name),1);
         }
         //console.log($scope.selectedGenre);
+        $scope.filters_applied=$scope.selectedLang.length+$scope.selectedGenre.length;
   
     }
     
 
     $scope.checkedFilter = function (item) {
         if($scope.selectedLang.length>0){
+            $scope.filters_applied=$scope.selectedLang.length+$scope.selectedGenre.length;
             return $scope.selectedLang.indexOf(item.language) !== -1;
         }
         else{
@@ -164,6 +168,7 @@
 
       $scope.checkedGenreFilter = function (item) {
         if($scope.selectedGenre.length>0){
+            $scope.filters_applied=$scope.selectedLang.length+$scope.selectedGenre.length;
             return $scope.selectedGenre.indexOf(item.genre) !== -1;
         }
         else{
@@ -173,15 +178,6 @@
       };
     
   
-
-})
-.controller('registerCtrl', function ($scope, $state, $rootScope,$stateParams) {
-
-    $rootScope.currenttab="regTab";
-    $scope.prevPage=$stateParams.prevState;
-    console.log("inside reg");
-    
-
 
 })
 .controller('screenCtrl', function ($scope, $state, $rootScope,$stateParams) {
