@@ -1,78 +1,81 @@
-<div class="mainDiv" ng-show="!isNew">
+<div class="mainDiv paddingbottom30per" ng-show="!isNew">
     
-    <div ng-click="goBack('home')">back</div>
-    
+    <div ng-click="goBack('home')" class="back_norm">< Back</div>
+    <div class="padding_horizontal20">
     <div class="row">
-        <div class="col-4">Username:</div>
-        <div class="col-8"><input placeholder="Enter Username" ng-model="user_name"/></div>
+        <div class="col-4 align-right input_label">Username:</div>
+        <div class="col-8 input_padding"><input placeholder="Enter Username" ng-model="user_name"/></div>
 
     </div>
     <div class="row">
-        <div class="col-4">Password:</div>
-        <div class="col-8"><input  type="password" placeholder="Enter Password" ng-model="password"/></div>
+        <div class="col-4 align-right input_label">Password:</div>
+        <div class="col-8 input_padding"><input  type="password" placeholder="Enter Password" ng-model="password"/></div>
 
     </div>
     
     <div class="row">
-        <div class="col-12" ng-click="login()">Login</div>
+        <div class="col-12 input_padding cursor_pointer login margintop10per" ng-click="login()">Login</div>
         
 
     </div>
     <div class="row">
-        <div class="col-12" ng-click="toggleRegister()">Don't have an account? Sign up here!</div>
+        <div class="col-12 align-center  cursor_pointer" ng-click="toggleRegister()">Don't have an account? Sign up here!</div>
         
 
     </div>
 </div>
+</div>
 
 <div class="mainDiv" ng-show="isNew">
     
-    <div ng-click="toggleRegister()">back</div>
+    <div ng-click="toggleRegister()" class="back_norm">< Back</div>
+    <div class="padding_horizontal20">
     <div class="row">
-        <div class="col-4">Username:</div>
-        <div class="col-8"><input placeholder="Enter Username" ng-model="user_name"/></div>
+        <div class="col-4 align-right input_label">Username:</div>
+        <div class="col-8 input_padding"><input placeholder="Enter Username" ng-model="user_name"/></div>
 
     </div>
     <div class="row">
-        <div class="col-4">Password:</div>
-        <div class="col-8"><input  type="password" placeholder="Enter Password" ng-model="password"/></div>
+        <div class="col-4 align-right input_label">Password:</div>
+        <div class="col-8 input_padding"><input  type="password" placeholder="Enter Password" ng-model="password"/></div>
 
     </div>
     <div class="row">
-        <div class="col-4">Confirm Password:</div>
-        <div class="col-8"><input  type="password" placeholder="Re-Enter Password" ng-model="password"/></div>
+        <div class="col-4 align-right input_label">Confirm Password:</div>
+        <div class="col-8 input_padding"><input  type="password" placeholder="Re-Enter Password" ng-model="password"/></div>
 
     </div>
     <div class="row">
-        <div class="col-4">Name:</div>
-        <div class="col-8"><input placeholder="Enter Full name" ng-model="customer_name"/></div>
+        <div class="col-4 align-right input_label">Name:</div>
+        <div class="col-8 input_padding"><input placeholder="Enter Full name" ng-model="customer_name"/></div>
 
     </div>
 
     <div class="row">
-        <div class="col-4">Billing Address:</div>
-        <div class="col-8"><input placeholder="Enter billing Address" ng-model="customer_address"/></div>
+        <div class="col-4 align-right input_label">Billing Address:</div>
+        <div class="col-8 input_padding"><input placeholder="Enter billing Address" ng-model="customer_address"/></div>
 
     </div>
     <div class="row">
-        <div class="col-4">Pincode:</div>
-        <div class="col-8"><input placeholder="Enter pincode" ng-model="customer_pincode"/></div>
+        <div class="col-4 align-right input_label">Pincode:</div>
+        <div class="col-8 input_padding"><input placeholder="Enter pincode" ng-model="customer_pincode"/></div>
 
     </div>
     <div class="row">
-        <div class="col-4">Card Number:</div>
-        <div class="col-8"><input placeholder="Enter debit card number" ng-model="customer_card"/></div>
+        <div class="col-4 align-right input_label">Card Number:</div>
+        <div class="col-8 input_padding"><input placeholder="Enter debit card number" ng-model="customer_card"/></div>
 
     </div>
     
     <div class="row">
-        <div class="col-4">Expiry Date:</div>
-        <div class="col-8"><input type="date" placeholder="Enter expiry date" ng-model="customer_exp_date"/></div>
+        <div class="col-4 align-right input_label">Expiry Date:</div>
+        <div class="col-8 input_padding"><input type="date" placeholder="Enter expiry date" ng-model="customer_exp_date"/></div>
 
     </div>
     <div class="row">
-        <div class="col-12" ng-click="register()">Register</div>
+        <div class="col-12 input_padding cursor_pointer login margintop10per" ng-click="register()">Register</div>
         
 
     </div>
+</div>
 </div>

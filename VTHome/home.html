@@ -18,7 +18,9 @@
                 </div>
             </div>
             <div class="row">
-                <div class="cursor_pointer login" ng-click="gotoPage('MovieBook',detailedDesc,'home')">Book</div>
+                <div class="col-12">
+                    <div class=" margin_ cursor_pointer login" ng-click="gotoPage('MovieBook',detailedDesc,'home')">Book</div>
+                </div>
             </div>
 
         </div>
@@ -36,18 +38,22 @@
             Batman Marathon! This Week!!
         </div>
     </div>
-    <div class="row" ng-hide="closeFilters">
-        <div class="col-12">
-            <div>Filter by Language:</div>
-            <div class="flex_container">
-                <div class="" ng-repeat="lang in languages">
+    <div class="row filters_" ng-hide="closeFilters">
+        <div class="col-12 nopadding">
+            <div class="align-center bold_text flex_container" ng-click="showLangFilter=!showLangFilter">
+                <div class="margin_">Filter by Language ></div>
+            </div>
+            <div class="flex_container" ng-show="showLangFilter">
+                <div ng-repeat="lang in languages">
                     <input type="checkbox" name="lang" value="{{lang}}" ng-model="lang.isChecked"
                         ng-change="selectLang(lang.name)">{{lang.name}}</input>
                 </div>
             </div>
-            <div>Filter by Genre:</div>
-            <div class="flex_container">
-                <div class="" ng-repeat="genre in genres">
+            <div class="align-center bold_text flex_container" ng-click="showGenreFilter=!showGenreFilter">
+            <div>Filter by Genre ></div>
+        </div>
+            <div class="flex_container" ng-show="showGenreFilter">
+                <div class="margin_" ng-repeat="genre in genres">
                     <input type="checkbox" name="genre" value="{{genre}}" ng-model="genre.isChecked"
                         ng-change="selectGenre(genre.name)">{{genre.name}}</input></div>
             </div>

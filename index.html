@@ -22,14 +22,17 @@
 
 <body ng-app="vtStarter" ng-controller="vtStarterCtrl">
     <div class="bg">
-    <div class="head">
+    <div class="head cursor_pointer" ng-click="gotoPage('home')">
 
         <div class="heading">V-Talkies</div>
         <div class="slogan">Stream Together On The Fly...</div>
     </div>
     
     <div class="row" style="margin: 10px;">
-        <div class="col-10"></div>
+        <div class="col-2 cursor_pointer  " ng-class="{'nopadding':currenttab!='homeTab'}" >
+            <i class="material-icons" ng-click="gotoPage('home')" ng-if="currenttab!='homeTab'">home</i>
+        </div>
+        <div class="col-8"></div>
         <div class="col-2 cursor_pointer login">
             <div ng-click="gotoPage('Login')" ng-show="!isLoggedin">
                 Login/Register
@@ -41,9 +44,7 @@
     </div>
 
     <ui-view></ui-view>
-    <div>
-        <h5>copyright footer</h5>
-    </div>
+    
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 </div>
 

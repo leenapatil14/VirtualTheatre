@@ -1,3 +1,4 @@
+<div class="mainDiv">
 <div class="relative_">
     <div class="fixed_" ng-hide="showDescription" >
         <div class="row">
@@ -8,7 +9,13 @@
             
         </div>
     </div>
+    <div ng-if="bookedMovie!=null">
+        Sucess!
+    Enjoy streaming {{bookedMovie.title}} at {{bookedMovie.time}}
+    </div>
+    <div class="back_norm">
     Your Watchlist:
+    </div>
     <div class="flex_home  " >
         <div class="home_movies cursor_pointer" ng-repeat="movie in movies " ng-click="open_screen(movie)">
            
@@ -23,5 +30,5 @@
         
         
     </div>
-
+</div>
 </div>
