@@ -19,7 +19,8 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <div class=" margin_ cursor_pointer login" ng-click="gotoPage('MovieBook',detailedDesc,'home')">Book</div>
+                    <div class=" margin_ cursor_pointer login" id="log" ng-click="checkLogin('MovieBook',detailedDesc,'home')">Book</div>
+                    <div class="align-center">{{err}}</div>
                 </div>
             </div>
 
@@ -27,17 +28,13 @@
     </div>
 
     <div class="row">
-        <div class="col-11 search_"><input type="text" ng-model="searchText" placeholder="Search a movie"></input></div>
-        <div class="col-1 filter_ cursor_pointer" ng-click="showFilters()">
+        <div class="col_11 search_"><input type="text" ng-model="searchText" placeholder="Search a movie"></input></div>
+        <div class="col_1 filter_ cursor_pointer" ng-click="showFilters()">
             <i class="material-icons">reorder</i>
             <span ng-if="filters_applied>0">{{filters_applied}}</span>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12 highlights">
-            Batman Marathon! This Week!!
-        </div>
-    </div>
+    
     <div class="row filters_" ng-hide="closeFilters">
         <div class="col-12 nopadding">
             <div class="align-center bold_text flex_container" ng-click="showLangFilter=!showLangFilter">
@@ -60,7 +57,11 @@
         </div>
 
     </div>
-
+    <div class="row">
+        <div class="col-12 highlights">
+            Batman Marathon! This Week!!
+        </div>
+    </div>
     <div class="flex_home  ">
         <div class="home_movies cursor_pointer"
             ng-repeat="movie in movies | filter:searchText | filter:checkedFilter |filter:checkedGenreFilter"

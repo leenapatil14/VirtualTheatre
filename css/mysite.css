@@ -43,11 +43,16 @@ body{
 .col-1 {
     width: 8.33%;
 }
+.col_1 {
+    width: 8.33%;
+}
 
 .col-2 {
     width: 16.66%;
 }
-
+.norespcol_2{
+    width: 16.66%;
+}
 .col-20 {
     width: 20%;
 }
@@ -55,7 +60,9 @@ body{
 .col-3 {
     width: 25%;
 }
-
+.norespcol_3{
+    width: 25%;
+}
 .col-4 {
     width: 33.33%;
 }
@@ -71,7 +78,9 @@ body{
 .col-7 {
     width: 58.33%;
 }
-
+.norespcol_7{
+    width: 58.33%;
+}
 .col-8 {
     width: 66.66%;
 }
@@ -87,12 +96,14 @@ body{
 .col-11 {
     width: 91.66%;
 }
-
+.col_11 {
+    width: 91.66%;
+}
 .col-12 {
     width: 100%;
 }
 
-[class*="col-"] {
+[class*="col-"],[class*="col_"] {
     float: left;
     padding: 15px;
 }
@@ -117,7 +128,7 @@ input {
     padding: 10px;
 }
 .margin_{
-    margin:2%;
+    margin:2% !important;
 }
 .nopadding {
     padding: 0 !important;
@@ -199,10 +210,14 @@ input {
     top: 0%;
     /* padding: 10%; */
     /* margin: 2%; */
-    /* color: aliceblue; */
+    color: rgb(1, 120, 156);
     width: 100%;
-    background-color: #00171fe8;
+    background-color: #fffffffa;
 
+
+}
+.fixed_ .row [class*='col-'] .login{
+    color: #fff !important;
 }
 .filters_{
     background-color: #121a2394;

@@ -74,6 +74,14 @@
     $scope.toggleRegister=function(){
         $scope.isNew=!$scope.isNew;
     }
+    $scope.register=function(){
+        $rootScope.isLoggedin=true;
+        $rootScope.gotoPage('home');
+    }
+    $scope.login=function(){
+        $rootScope.isLoggedin=true;
+        $rootScope.gotoPage('home');
+    }
     
 
 })
@@ -87,6 +95,7 @@
     $scope.selectedGenre=[];
     $scope.selectedLang=[];
     $scope.filters_applied=$scope.selectedLang.length+$scope.selectedGenre.length;
+    $scope.err='';
     
     $scope.movies;
     var data = [];
@@ -105,7 +114,7 @@
         }
       });
 
-    console.log($scope.movies)
+   // console.log($scope.movies)
 
 
     
@@ -120,10 +129,12 @@
     $scope.open_description=function(movie){
         $scope.showDescription=false;
         $scope.detailedDesc=movie;
+        $scope.err='';
     }
     $scope.close_description=function(){
         $scope.detailedDesc={}
         $scope.showDescription=true;
+        $scope.err='';
         
     }
     $scope.showFilters=function(){
@@ -176,6 +187,15 @@
         }
         
       };
+
+      $scope.checkLogin=function(nextPage,movieObject,prevPage){
+          if($rootScope.isLoggedin){
+              $scope.gotoPage(nextPage,movieObject,prevPage);
+          }
+          else{
+              $scope.err="Please Login to continue";
+          }
+      }
     
   
 
