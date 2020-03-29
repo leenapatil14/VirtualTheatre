@@ -29,16 +29,17 @@
     </div>
     
     <div class="row " style="margin: 10px;">
-        <div class="norespcol_2 cursor_pointer  " ng-class="{'nopadding':currenttab!='homeTab'}" >
+        <div class="norespcol_2 cursor_pointer  " ng-class="{'nopadding':(currenttab!='homeTab')||(isLoggedin)}" >
             <i class="material-icons" ng-click="gotoPage('home')" ng-if="currenttab!='homeTab'">home</i>
+            <i class="material-icons" ng-click="gotoPage('screen')" ng-if="isLoggedin">face</i>
         </div>
         <div class="norespcol_7"></div>
-        <div class="norespcol_3 cursor_pointer login ">
-            <div ng-click="gotoPage('Login')" ng-show="!isLoggedin">
+        <div class="norespcol_3 cursor_pointer  ">
+            <div ng-click="gotoPage('Login')" ng-show="!isLoggedin" class="login">
                 Login/Register
             </div>
             <div ng-click="logout()" ng-show="isLoggedin">
-                Logout
+                <i class="material-icons logout" >power_settings_new</i>
             </div>
         </div>
     </div>

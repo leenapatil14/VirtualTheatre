@@ -216,6 +216,12 @@ input {
 
 
 }
+.logout{
+    float: right;
+    color: rgb(214, 3, 110);
+    font-size: 2vw;
+    font-weight: 900
+}
 .fixed_ .row [class*='col-'] .login{
     color: #fff !important;
 }

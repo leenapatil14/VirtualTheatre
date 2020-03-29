@@ -60,6 +60,11 @@
     $rootScope.goBack=function(pageName){
         $state.go(pageName);
     }
+    
+    $rootScope.logout=function(){
+        $rootScope.isLoggedin=false;
+        $rootScope.gotoPage('home');
+       };
 
 })
 .controller('loginCtrl', function ($scope, $state, $rootScope,$stateParams) {
@@ -74,11 +79,11 @@
     $scope.toggleRegister=function(){
         $scope.isNew=!$scope.isNew;
     }
-    $scope.register=function(){
+    $rootScope.register=function(){
         $rootScope.isLoggedin=true;
         $rootScope.gotoPage('home');
     }
-    $scope.login=function(){
+    $rootScope.login=function(){
         $rootScope.isLoggedin=true;
         $rootScope.gotoPage('home');
     }
@@ -190,12 +195,13 @@
 
       $scope.checkLogin=function(nextPage,movieObject,prevPage){
           if($rootScope.isLoggedin){
-              $scope.gotoPage(nextPage,movieObject,prevPage);
+              $rootScope.gotoPage(nextPage,movieObject,prevPage);
           }
           else{
               $scope.err="Please Login to continue";
           }
-      }
+      };
+       
     
   
 
