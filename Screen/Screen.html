@@ -1,0 +1,27 @@
+<div class="relative_">
+    <div class="fixed_" ng-hide="showDescription" >
+        <div class="row">
+            <div class="col-12" ng-click="close_screen()">Close</div>
+            <div >
+                Vdeo
+            </div>
+            
+        </div>
+    </div>
+    Your Watchlist:
+    <div class="flex_home  " >
+        <div class="home_movies cursor_pointer" ng-repeat="movie in movies " ng-click="open_screen(movie)">
+           
+                        {{movie.frontImg}} <br>
+                        {{movie.title}} <br>
+                        {{movie.time}} <br>
+                        {{movie.duration}} 
+                    
+               
+            
+        </div>
+        
+        
+    </div>
+
+</div>

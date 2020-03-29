@@ -1,0 +1,46 @@
+<div class="mainDiv">
+    
+    <div ng-click="goBack(prevPage)">back</div>
+    <div class="row">
+        {{selectedMovie.frontImg}}<br>
+        {{selectedMovie.title}}<br>
+        {{selectedMovie.duration}}<br>
+        {{selectedMovie.ticketRate}}<br>
+        
+    </div>
+    <div class="row">
+        <div class="col-4">Name:</div>
+        <div class="col-8"><input placeholder="Enter Full name" ng-model="customer_name"/></div>
+
+    </div>
+    <div class="row">
+        <div class="col-4">Billing Address:</div>
+        <div class="col-8"><input placeholder="Enter billing Address" ng-model="customer_address"/></div>
+
+    </div>
+    <div class="row">
+        <div class="col-4">Pincode:</div>
+        <div class="col-8"><input placeholder="Enter pincode" ng-model="customer_pincode"/></div>
+
+    </div>
+    <div class="row">
+        <div class="col-4">Card Number:</div>
+        <div class="col-8"><input placeholder="Enter debit card number" ng-model="customer_card"/></div>
+
+    </div>
+    <div class="row">
+        <div class="col-4">CVV:</div>
+        <div class="col-8"><input placeholder="Enter CVV" ng-model="customer_cvv"/></div>
+
+    </div>
+    <div class="row">
+        <div class="col-4">Expiry Date:</div>
+        <div class="col-8"><input type="date" placeholder="Enter expiry date" ng-model="customer_exp_date"/></div>
+
+    </div>
+    <div class="row">
+        <div class="col-12" ng-click="gotoPage('PaymentConfirmation',selectedMovie)">Book</div>
+        
+
+    </div>
+</div>

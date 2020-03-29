@@ -1,0 +1,51 @@
+<div class="relative_">
+    <div class="fixed_" ng-hide="showDescription" >
+        <div class="row">
+            <div class="col-12" ng-click="close_description()">Close</div>
+            <div >
+                {{detailedDesc.frontImg}} <br>
+                    {{detailedDesc.description}} <br>
+                    {{detailedDesc.ticketRate}} <br>
+                    {{detailedDesc.duration}} 
+            </div>
+            <div class="button_" ng-click="gotoPage('MovieBook',detailedDesc,'home')">Book</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10 search"><input type="search" ng-model="searchText" placeholder="Search a movie"></input></div>
+        <div class="col-2 filter cursor_pointer" ng-click="showFilters()">filter</div>
+    </div>
+    <div class="row" ng-hide="closeFilters">
+        <div class="col-12">
+            <div>Filter by Language:</div>
+            <div class="flex_container">
+                <div class="" ng-repeat="lang in languages">
+                    <input type="checkbox" name="lang" value="{{lang}}" ng-model="lang.isChecked" ng-change="selectLang(lang.name)" >{{lang.name}}</input>
+                </div>
+            </div>
+            <div>Filter by Genre:</div>
+            <div class="flex_container">
+                <div class="" ng-repeat="genre in genres">
+                    <input type="checkbox" name="genre" value="{{genre}}" ng-model="genre.isChecked" ng-change="selectGenre(genre.name)">{{genre.name}}</input></div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="flex_home  " >
+        <div class="home_movies cursor_pointer" ng-repeat="movie in movies | filter:searchText | filter:checkedFilter |filter:checkedGenreFilter" ng-click="open_description(movie)">
+           
+                        {{movie.frontImg}} <br>
+                        {{movie.title}} <br>
+                        {{movie.time}} <br>
+                        {{movie.duration}} 
+                    
+               
+            
+        </div>
+        
+        
+    </div>
+    
+    </div>
+</div>

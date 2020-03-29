@@ -1,0 +1,26 @@
+<div class="mainDiv">
+    <div class="row">
+        <div class="col-12 about_img"><img src="images/leena.jpeg"/></div>
+        <div class="col-12 Name head_inner">Leena Manohar Patil</div>
+        <div class="col-12 title head_inner">Computer Engineer, Graduate Student at University at Buffalo,</br> Nature & Animal Lover by Heart</div>
+        <div class="col-12 About head_inner">I completed my undergraduate studies in Computer Engineering, which taught me how to methodically solve a problem and get the best solution in the least possible time. Apart from the academic knowledge it conferred me with, my bachelor helped me develop an inquisitive and curious attitude. I am currently pursuing Masters in Computer Science and Engineering, which, is a resourceful transition at this phase of my life and I would like to share my experience with the help of this blog.</div>
+    </div>
+    <div class="row skills">
+        <div class="flex-container">
+            <div ng-repeat="skill in skills" ng-style="{{skill.styles}}">{{skill.name}}</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 Name head_inner">Projects</div>
+    </div>
+    <div ng-repeat="project in projects" class="project_div padding10">
+        <div class="row padding10">
+            <div class="col-8 project_name nopadding">{{project.name}}</div>
+            <div class="col-4 project_date nopadding">{{project.date}}</div>
+        </div>
+        <div class="row padding10" ng-repeat="desc in project.desc">
+            <div class="col-11 nopadding"><i class="fas fa-code project_bullets"></i><span class="project_points">&nbsp;{{desc}}</span></div>
+            <div class="col-1 nopadding"></div>
+        </div>
+    </div>
+</div>
