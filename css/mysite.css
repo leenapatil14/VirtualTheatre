@@ -446,7 +446,7 @@ div.gallery {
 }
 
 .flex_horizontal::-webkit-scrollbar:horizontal {
-    height: 2px;
+    height: 1.5px;
 }
 
 .flex_horizontal::-webkit-scrollbar-thumb {
@@ -472,6 +472,11 @@ div.gallery {
   }
   .my_movies > img{
     width: 150px;
+  }
+  .page_header{
+    font-size: 2vw;
+    margin: 5% 0%;
+    font-family: 'Sedgwick Ave Display', cursive;
   }
 @media only screen and (max-width: 800px) {
     /* For mobile phones: */
