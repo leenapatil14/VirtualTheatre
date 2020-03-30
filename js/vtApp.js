@@ -64,6 +64,21 @@ angular.module('vtStarter', ["ui.router",'firebase'] )
     $rootScope.goBack=function(pageName){
         $state.go(pageName);
     }
+    $rootScope.logout=function(){
+        $rootScope.isLoggedin=false;
+        $state.go("home");
+    }
+    var config = {
+        apiKey: "AIzaSyAgvsOC1ZzJlrJ3Jfl3NV4jPqq_Q2izk_Y",
+        authDomain: "covid-19-c798b.firebaseapp.com",
+        databaseURL: "https://covid-19-c798b.firebaseio.com",
+        projectId: "covid-19-c798b",
+        storageBucket: "covid-19-c798b.appspot.com",
+        messagingSenderId: "528065569193",
+        appId: "1:528065569193:web:604cc965450e048bab24b8",
+        measurementId: "G-90L9M26GWC"
+      };
+    $rootScope.r = firebase.initializeApp(config);
 
 })
 .controller('loginCtrl', function ($scope, $state, $rootScope,$stateParams, $firebase) {
@@ -77,23 +92,16 @@ angular.module('vtStarter', ["ui.router",'firebase'] )
     $state.loginData={};
     
     $scope.login=function(){
-        var config = {
-            apiKey: "AIzaSyAgvsOC1ZzJlrJ3Jfl3NV4jPqq_Q2izk_Y",
-            authDomain: "covid-19-c798b.firebaseapp.com",
-            databaseURL: "https://covid-19-c798b.firebaseio.com",
-            projectId: "covid-19-c798b",
-            storageBucket: "covid-19-c798b.appspot.com",
-            messagingSenderId: "528065569193",
-            appId: "1:528065569193:web:604cc965450e048bab24b8",
-            measurementId: "G-90L9M26GWC"
-          };
-        const r = firebase.initializeApp(config);
-        var dbRef = r.database();
+
+
+        var dbRef = $rootScope.r.database();
         var contactsRef = dbRef.ref('Users/Details/'+$scope.email);
         contactsRef.on("value", function(snapshot) {
             console.log(snapshot.val());
-            if(snapshot.val().password == $scope.password)
+            if(snapshot.val().password == $scope.password){
+            $rootScope.isLoggedin=true;
                 $state.go("home");
+            }
 
           }, function (errorObject) {
             console.log("The read failed: " + errorObject.code);
@@ -116,15 +124,16 @@ angular.module('vtStarter', ["ui.router",'firebase'] )
             appId: "1:528065569193:web:604cc965450e048bab24b8",
             measurementId: "G-90L9M26GWC"
           };
-        const r = firebase.initializeApp(config);
-        var dbRef = r.database();
+        
+          var dbRef = $rootScope.r.database();
         var contactsRef = dbRef.ref('Users/Details/'+$scope.email);
         contactsRef.set({
             name: $scope.customer_name,
             password: $scope.password,
             email: $scope.email
         });
-        $state.go("home");
+        $scope.err="Please Login to Continue";
+        $scope.toggleRegister();
     }
 
 })
@@ -236,6 +245,15 @@ angular.module('vtStarter', ["ui.router",'firebase'] )
         }
         
       };
+      $scope.checkLogin=function(nextPage,movieObj,prevPage){
+        if($rootScope.isLoggedin){
+            $rootScope.gotoPage(nextPage,movieObj,prevPage);
+        }
+        else{
+            $scope.err="Please Login to Continue";
+        }
+
+    }
     
   
 
@@ -246,14 +264,16 @@ angular.module('vtStarter', ["ui.router",'firebase'] )
     $scope.prevPage=$stateParams.prevState;
     console.log("inside screenCtrl");
     $scope.showDescription=true;
-    $scope.movies=[
-        {'title':'ABCD444','upcoming':'true','time':'today, 2:30 PM','duration':'3 hr 30 mins','frontImg':'images/pune/lonavala.jpeg','backImg':'images/pune/lonavala.jpeg','genre':'Comedy','language':'English','year':'2012'},
-        {'title':'ABCD444','upcoming':'true','time':'today, 2:30 PM','duration':'3 hr 30 mins','frontImg':'images/pune/lonavala.jpeg','backImg':'images/pune/lonavala.jpeg','genre':'Comedy','language':'English','year':'2012'},
-        {'title':'ABCD444','upcoming':'true','time':'today, 2:30 PM','duration':'3 hr 30 mins','frontImg':'images/pune/lonavala.jpeg','backImg':'images/pune/lonavala.jpeg','genre':'Comedy','language':'English','year':'2012'},
-        {'title':'ABCD444','upcoming':'true','time':'today, 2:30 PM','duration':'3 hr 30 mins','frontImg':'images/pune/lonavala.jpeg','backImg':'images/pune/lonavala.jpeg','genre':'Comedy','language':'English','year':'2012'},
-        {'title':'ABCD444','upcoming':'true','time':'today, 2:30 PM','duration':'3 hr 30 mins','frontImg':'images/pune/lonavala.jpeg','backImg':'images/pune/lonavala.jpeg','genre':'Comedy','language':'English','year':'2012'},
-        {'title':'ABCD444','upcoming':'true','time':'today, 2:30 PM','duration':'3 hr 30 mins','frontImg':'images/pune/lonavala.jpeg','backImg':'images/pune/lonavala.jpeg','genre':'Comedy','language':'English','year':'2012'}
-    ];
+    $.ajax({
+        url: 'http://www.omdbapi.com/?apikey=b9ac7a00&s=Batman',
+        async: false,
+        dataType: 'json',
+        success: function (json) {
+          mydata = json.Search;
+          $scope.movies = json.Search;
+        }
+      });
+
     $scope.open_screen=function(movie){
         $scope.showDescription=false;
         $scope.detailedDesc=movie;

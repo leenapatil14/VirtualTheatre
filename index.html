@@ -32,12 +32,12 @@
         <div class="norespcol_2 " ng-class="{'nopadding':(currenttab!='homeTab')||(isLoggedin)}">
             <div class="cursor_pointer" >
                 <i class="material-icons" ng-if="currenttab!='homeTab'" ng-click="gotoPage('home')">home</i>
-                <i class="material-icons" ng-if="isLoggedin">face</i>
+                <i class="material-icons" ng-if="isLoggedin && currenttab!='screenTab'" ng-click="gotoPage('screen')">face</i>
             </div>
         </div>
         <div class="norespcol_7"></div>
-        <div class="norespcol_3 cursor_pointer login" ng-hide="currenttab=='login'">
-            <div ng-click="gotoPage('Login')" ng-show="!isLoggedin">
+        <div class="norespcol_3 cursor_pointer " >
+            <div ng-click="gotoPage('Login')" class="login" ng-hide="isLoggedin || currenttab=='login'">
                 Login/Register
             </div>
             <div ng-click="logout()" ng-show="isLoggedin">
