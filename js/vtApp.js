@@ -230,6 +230,9 @@
         $scope.showDescription=true;
         
     }
+    $scope.showMovieFn=function(movie){
+        $scope.showMovie=!$scope.showMovie;
+    }
 
 })
 .controller('paymentConfirmationCtrl', function ($scope, $state, $rootScope,$stateParams) {

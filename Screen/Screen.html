@@ -1,4 +1,4 @@
-<div class="mainDiv">
+<div class="mainDiv paddingbottom30per">
     <div class="relative_">
         <div class="fixed_" ng-hide="showDescription">
             <div class="row">
@@ -16,33 +16,41 @@
         <div class="back_norm align-center bold_text">
             Your Screens
         </div>
-        <div class="row  my_account" >
+        <div class="row  my_account">
             <div class="col-1 align-center bold_text">
-                <
-            </div>
-            <div class="col-10 flex_horizontal nopadding">
-                <div class=" inline_mov" ng-repeat="movie in movies " >
+                < </div>
+                    <div class="col-10 flex_horizontal nopadding">
+                        <div class=" inline_mov" ng-repeat="movie in movies ">
 
-                    <div class="my_movies disable_mov" >
-                        <img src="{{movie.Poster}}">
+                            <div class="my_movies disable_mov">
+                                <img src="{{movie.Poster}}">
 
-                        <div class="movie_desc">
-                            {{movie.Title}} <br>
-                            {{movie.Year}} <br>
-                        </div>
-                             <div class="input_padding margin_ cursor_pointer watch_now margintop10per" ng-if="true" ng-click="gotoPage('screen',selectedMovie)">Enter Screen
-                    
+                                <div class="movie_desc">
+                                    {{movie.Title}} <br>
+                                    {{movie.Year}} <br>
                                 </div>
-                            
+                                <div class="input_padding margin_ cursor_pointer watch_now margintop10per" ng-if="true"
+                                    ng-click="showMovieFn(movie)">Enter Screen
+
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <div class="col-1 align-center bold_text">
+                        >
+                    </div>
+
+
+
             </div>
-            <div class="col-1 align-center bold_text">
-                >
+        </div>
+        <div class="row">
+            <div class="col-12" ng-show="showMovie">
+                <video width="100%" height="600px" controls>
+                    <source src="/images/demo.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
             </div>
-
-
-
         </div>
     </div>
-</div>

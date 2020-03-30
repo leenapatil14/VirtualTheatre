@@ -437,6 +437,23 @@ div.gallery {
     overflow-x: scroll;
     display: flex;
   }
+  .flex_horizontal::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.flex_horizontal::-webkit-scrollbar:vertical {
+    width: 10px;
+}
+
+.flex_horizontal::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.flex_horizontal::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid white; /* should match background, can't be transparent */
+    background-color:#fff;
+}
   .inline_mov{
     display: inline-block;
     margin: 5px;
