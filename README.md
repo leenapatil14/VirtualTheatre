@@ -20,6 +20,16 @@
 * Get confirmation email with details for movie screening
 * Using link open the screen and enjoy your Movie :)
 
+<p float="left">
+<img src="/SS/1.jpg" width=170 height=400>
+<img src="/SS/2.jpg" width=170 height=400>
+<img src="/SS/3.jpg" width=170 height=400>
+<img src="/SS/4.jpg" width=170 height=400>
+</p>
+
+<img src="/SS/5.jpg" width=300 height=400>
+
+
 ### Further help
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
