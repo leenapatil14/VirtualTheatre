@@ -10,9 +10,9 @@
 * Right Click on index.html and run on Live Server
 
 ### Built with
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) 
-Backend was created using [FireBase](https://firebase.google.com/docs)
-Api used for movies - [Omdb API](http://www.omdbapi.com/)
+* This project was generated with [Angular CLI](https://github.com/angular/angular-cli) 
+* Backend was created using [FireBase](https://firebase.google.com/docs)
+* Api used for movies - [Omdb API](http://www.omdbapi.com/)
 
 ### Application Use
 * Works as a Virtual Theater
