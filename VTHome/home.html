@@ -19,6 +19,11 @@
             </div>
             <div class="row">
                 <div class="col-12">
+                    <p><b>{{detailedDesc.Plot}}</b></p>
+                    <p><b>Time: </b>{{detailedDesc.Runtime}}</p>
+                    <p><b>Genre: </b>{{detailedDesc.Genre}}</p>
+                    <p><b>Actors: </b>{{detailedDesc.Actors}}</p>
+                    <p><b>imdbRating: </b>{{detailedDesc.imdbRating}} / 10</p>
                     <div class=" margin_ cursor_pointer login" id="log" ng-click="checkLogin('MovieBook',detailedDesc,'home')">Book</div>
                     <div class="align-center">{{err}}</div>
                 </div>
