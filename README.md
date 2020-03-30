@@ -21,13 +21,13 @@
 * Using link open the screen and enjoy your Movie :)
 
 <p float="left">
-<img src="/SS/1.jpg" width=400 height=400>
-<img src="/SS/2.jpg" width=400 height=400>
-<img src="/SS/3.jpg" width=400 height=400>
-<img src="/SS/4.jpg" width=400 height=400>
+<img src="/SS/1.jpg" width=450 height=450>
+<img src="/SS/2.jpg" width=450 height=450>
+<img src="/SS/3.jpg" width=450 height=450>
+<img src="/SS/4.jpg" width=450 height=450>
 </p>
 
-<img src="/SS/5.jpg" width=600 height=500>
+<img src="/SS/5.jpg" width=650 height=650>
 
 
 ### Further help
