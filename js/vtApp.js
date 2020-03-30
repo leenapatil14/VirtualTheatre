@@ -105,7 +105,7 @@ angular.module('vtStarter', ["ui.router",'firebase'] )
         $scope.isNew=!$scope.isNew;
     }
 
-    $scope.save=function(){
+    $scope.register=function(){
         var config = {
             apiKey: "AIzaSyAgvsOC1ZzJlrJ3Jfl3NV4jPqq_Q2izk_Y",
             authDomain: "covid-19-c798b.firebaseapp.com",
