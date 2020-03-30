@@ -5,7 +5,7 @@
 ## Enjoy At Home Movie Screening on One Click :)
 
 ### Installation
-* No installion require - web application
+* No installation required - web application
 * Run on Visual Studion Code with Live Server Install
 * Right Click on index.html and run on Live Server
 
