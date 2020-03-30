@@ -446,13 +446,12 @@ div.gallery {
 }
 
 .flex_horizontal::-webkit-scrollbar:horizontal {
-    height: 10px;
+    height: 2px;
 }
 
 .flex_horizontal::-webkit-scrollbar-thumb {
-    border-radius: 8px;
-    border: 2px solid white; /* should match background, can't be transparent */
-    background-color:#fff;
+    border-radius: 20px;
+    background-image: linear-gradient(90deg, rgb(214, 3, 110) 0%, rgb(21, 180, 228) 53%, rgb(255, 147, 13) 100%);
 }
   .inline_mov{
     display: inline-block;
