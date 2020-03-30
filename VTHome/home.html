@@ -3,29 +3,27 @@
 
         <div class="fixed_" ng-hide="showDescription">
             <div class="row">
-                <div class="col-12 cursor_pointer" ng-click="close_description()">X Close</div>
+                <div class="col-12 cursor_pointer bold_text" ng-click="close_description()">X Close</div>
             </div>
             <div class="row">
                 <div class="col-12 detailedTitle">{{detailedDesc.Title}}<div class="detailedYear">&nbsp;({{detailedDesc.Year}})</div></div>
                 
-                <div class="galleryDestailed">
-                    <img src="{{detailedDesc.Poster}}" width="600" height="400">
-                    
-                    <div class="desc">
-                         
-                        2:30pm 1st April 
-                    </div>
-                </div>
+                
             </div>
             <div class="row">
-                <div class="col-12">
+                <div class=" col-6 galleryDestailed">
+                    <img src="{{detailedDesc.Poster}}" width="600" height="400">
+                    
+                </div>
+                <div class="col-6 galleryDetailed">
                     <p><b>{{detailedDesc.Plot}}</b></p>
                     <p><b>Time: </b>{{detailedDesc.Runtime}}</p>
                     <p><b>Genre: </b>{{detailedDesc.Genre}}</p>
                     <p><b>Actors: </b>{{detailedDesc.Actors}}</p>
                     <p><b>imdbRating: </b>{{detailedDesc.imdbRating}} / 10</p>
+                    <p><b>Date of VT Screening: </b>2:30pm 1st April </p>
                     <div class=" margin_ cursor_pointer login" id="log" ng-click="checkLogin('MovieBook',detailedDesc,'home')">Book</div>
-                    <div class="align-center">{{err}}</div>
+                    <div class="align-center errText">{{err}}</div>
                 </div>
             </div>
 

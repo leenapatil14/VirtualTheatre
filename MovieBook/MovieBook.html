@@ -2,15 +2,17 @@
     
     <div ng-click="goBack(prevPage)" class="back_norm cursor_pointer">< Back</div>
     <div class="row">
-        <div class="align-center bold_text page_header">Booking Confirmation</div>
-        <div class="col-12 detailedTitle">{{selectedMovie.Title}}<div class="detailedYear">&nbsp;({{selectedMovie.Year}})</div></div>
+        <div class=" col-12 align-center bold_text page_header nopadding">Booking Confirmation</div>
+        <div class="col-12 detailedTitle nopadding">{{selectedMovie.Title}}<div class="detailedYear">&nbsp;({{selectedMovie.Year}})</div></div>
         
-        <div class="galleryDestailed">
-           
-            <div class="desc">
-                 
-                2:30pm 1st April 
-            </div>
+        
+    </div>
+    <div class="row">
+        
+        <div class="col-12 galleryDetailed align-center nopadding">
+            
+            <p><b>Time: </b>{{selectedMovie.Runtime}}</p>
+            <p><b>Date of VT Screening: </b>2:30pm 1st April </p>
         </div>
     </div>
     <div class="padding_horizontal20">

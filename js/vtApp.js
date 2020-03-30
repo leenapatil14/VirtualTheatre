@@ -172,8 +172,14 @@ angular.module('vtStarter', ["ui.router",'firebase'] )
     {'name':'Marathi','isChecked':'false'}
 ];
     $scope.genres=[{'name':'Comedy','isChecked':'false'},
-    {'name':'action','isChecked':'false'},
-    {'name':'Drama','isChecked':'false'}];
+    {'name':'Action','isChecked':'false'},
+    {'name':'Drama','isChecked':'false'},
+    {'name':'Adventure','isChecked':'false'},
+    {'name':'Animation','isChecked':'false'},
+    {'name':'Horror','isChecked':'false'},
+    {'name':'Thriller','isChecked':'false'},
+    {'name':'Sci-Fi','isChecked':'false'},
+    {'name':'Crime','isChecked':'false'}];
     $scope.open_description=function(movie){
         $scope.showDescription=false;
         var data = [];

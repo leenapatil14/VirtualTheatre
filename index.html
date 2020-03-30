@@ -36,7 +36,7 @@
             </div>
         </div>
         <div class="norespcol_7"></div>
-        <div class="norespcol_3 cursor_pointer " >
+        <div class="norespcol_3 cursor_pointer " ng-class="{'nopadding':(currenttab!='homeTab')||(isLoggedin)}">
             <div ng-click="gotoPage('Login')" class="login" ng-hide="isLoggedin || currenttab=='login'">
                 Login/Register
             </div>

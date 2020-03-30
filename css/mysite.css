@@ -222,13 +222,18 @@ input {
     color: rgb(1, 120, 156);
     width: 100%;
     background-color: #fffffffa;
+    border-radius: 10px;
 
 
+}
+.errText{
+    font-size: 1.5vw;
+    color:red;
 }
 .logout{
     float: right;
     color: rgb(214, 3, 110);
-    font-size: 2vw;
+    /* font-size: 2vw; */
     font-weight: 900
 }
 .fixed_ .row [class*='col-'] .login{
@@ -405,7 +410,7 @@ div.gallery {
     text-align: center;
     font-size: 1.2vw;
     font-weight: 900;
-    color: rgb(249, 228, 238);
+    /* color: rgb(249, 228, 238); */
   }
   div.galleryDestailed {
     /*margin: 5px; */
@@ -417,18 +422,24 @@ div.gallery {
     text-align: center;
   }
   div.galleryDestailed img{
-    width: 30%;
+    width: 80%;
     height: 400px;
+  }
+  div.galleryDetailed p{
+    font-size: 1.5vw;
+  }
+  div.galleryDetailed b{
+    color:#d68000;
   }
   .detailedTitle{
       text-align: center;
-      font-size: 1.5vw;
+      font-size: 2.2vw;
       font-weight: 900;
   }
   .detailedYear{
     display: inline;
     text-align: center;
-    font-size: 1.2vw;
+    font-size: 1.8vw;
     font-weight: 900;
   }
   .flex_horizontal{
