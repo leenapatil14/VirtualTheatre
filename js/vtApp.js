@@ -68,6 +68,17 @@ angular.module('vtStarter', ["ui.router",'firebase'] )
         $rootScope.isLoggedin=false;
         $state.go("home");
     }
+    var config = {
+        apiKey: "AIzaSyAgvsOC1ZzJlrJ3Jfl3NV4jPqq_Q2izk_Y",
+        authDomain: "covid-19-c798b.firebaseapp.com",
+        databaseURL: "https://covid-19-c798b.firebaseio.com",
+        projectId: "covid-19-c798b",
+        storageBucket: "covid-19-c798b.appspot.com",
+        messagingSenderId: "528065569193",
+        appId: "1:528065569193:web:604cc965450e048bab24b8",
+        measurementId: "G-90L9M26GWC"
+      };
+    $rootScope.r = firebase.initializeApp(config);
 
 })
 .controller('loginCtrl', function ($scope, $state, $rootScope,$stateParams, $firebase) {
@@ -81,18 +92,9 @@ angular.module('vtStarter', ["ui.router",'firebase'] )
     $state.loginData={};
     
     $scope.login=function(){
-        var config = {
-            apiKey: "AIzaSyAgvsOC1ZzJlrJ3Jfl3NV4jPqq_Q2izk_Y",
-            authDomain: "covid-19-c798b.firebaseapp.com",
-            databaseURL: "https://covid-19-c798b.firebaseio.com",
-            projectId: "covid-19-c798b",
-            storageBucket: "covid-19-c798b.appspot.com",
-            messagingSenderId: "528065569193",
-            appId: "1:528065569193:web:604cc965450e048bab24b8",
-            measurementId: "G-90L9M26GWC"
-          };
-        const r = firebase.initializeApp(config);
-        var dbRef = r.database();
+        
+        
+        var dbRef = $rootScope.r.database();
         var contactsRef = dbRef.ref('Users/Details/'+$scope.email);
         contactsRef.on("value", function(snapshot) {
             console.log(snapshot.val());
@@ -121,8 +123,8 @@ angular.module('vtStarter', ["ui.router",'firebase'] )
             appId: "1:528065569193:web:604cc965450e048bab24b8",
             measurementId: "G-90L9M26GWC"
           };
-        const r = firebase.initializeApp(config);
-        var dbRef = r.database();
+        
+        var dbRef = $rootScope.r.database();
         var contactsRef = dbRef.ref('Users/Details/'+$scope.email);
         contactsRef.set({
             name: $scope.customer_name,
