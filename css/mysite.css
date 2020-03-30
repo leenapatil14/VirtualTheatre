@@ -479,12 +479,17 @@ div.gallery {
         width: 100%;
         padding: 5px;
     }
-    
+    .input_label{
+        text-align: left !important;
+    }
     .flex-container > div {
         margin: 5px;
     }
     .padding10 {
         padding: 5px;
+    }
+    .paddingbottom30per{
+        padding-bottom: 80% !important;
     }
     
     body{

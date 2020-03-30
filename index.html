@@ -22,28 +22,32 @@
 
 <body ng-app="vtStarter" ng-controller="vtStarterCtrl">
     <div class="bg">
-    <div class="head">
+    <div class="head cursor_pointer" ng-click="gotoPage('home')">
 
         <div class="heading">V-Talkies</div>
         <div class="slogan">Stream Together On The Fly...</div>
     </div>
     
     <div class="row" style="margin: 10px;">
-        <div class="col-10"></div>
-        <div class="col-2 cursor_pointer login">
+        <div class="norespcol_2 " ng-class="{'nopadding':(currenttab!='homeTab')||(isLoggedin)}">
+            <div class="cursor_pointer" >
+                <i class="material-icons" ng-if="currenttab!='homeTab'" ng-click="gotoPage('home')">home</i>
+                <i class="material-icons" ng-if="isLoggedin">face</i>
+            </div>
+        </div>
+        <div class="norespcol_7"></div>
+        <div class="norespcol_3 cursor_pointer login" ng-hide="currenttab=='login'">
             <div ng-click="gotoPage('Login')" ng-show="!isLoggedin">
                 Login/Register
             </div>
             <div ng-click="logout()" ng-show="isLoggedin">
-                Logout
+                <i class="material-icons logout">power_settings_new</i>
             </div>
         </div>
     </div>
 
     <ui-view></ui-view>
-    <div>
-        <h5>copyright footer</h5>
-    </div>
+    
 </div>
 <!-- Include Firebase Library and Config-->
   <script src="//www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
